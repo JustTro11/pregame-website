@@ -163,10 +163,14 @@ export default function ReservationForm() {
                     </div>
 
                     <div>
-                        <label className="block text-sm font-medium text-text-secondary mb-1.5 ml-1">
+                        <label
+                            htmlFor="notes"
+                            className="block text-sm font-medium text-text-secondary mb-1.5 ml-1"
+                        >
                             {t('notes_label')}
                         </label>
                         <textarea
+                            id="notes"
                             className="input-field min-h-[100px] resize-none"
                             placeholder={t('notes_placeholder')}
                             {...register('notes')}
