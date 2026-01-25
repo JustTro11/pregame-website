@@ -1,10 +1,11 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import { getInstagramPosts, InstagramPost } from '@/lib/instagram';
 
-const LOOKBOOK_IMAGES = [
+const STATIC_LOOKBOOK_IMAGES = [
     '/assets/instagram/2026-01-23_08-58-31_UTC_1.jpg',
     '/assets/instagram/2026-01-06_07-19-31_UTC_1.jpg',
     '/assets/instagram/2024-11-18_11-30-38_UTC_3.jpg',
@@ -17,6 +18,17 @@ const LOOKBOOK_IMAGES = [
 
 export default function Lookbook() {
     const t = useTranslations('home');
+    const [images, setImages] = useState<string[]>(STATIC_LOOKBOOK_IMAGES);
+
+    useEffect(() => {
+        async function loadImages() {
+            const posts = await getInstagramPosts(8);
+            if (posts && posts.length > 0) {
+                setImages(posts.map(p => p.media_url));
+            }
+        }
+        loadImages();
+    }, []);
 
     return (
         <section className="section overflow-hidden">
@@ -47,7 +59,7 @@ export default function Lookbook() {
                 </div>
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    {LOOKBOOK_IMAGES.map((src, index) => (
+                    {images.map((src: string, index: number) => (
                         <div
                             key={src}
                             className={`relative overflow-hidden group rounded-2xl aspect-[3/4] ${index === 1 || index === 4 ? 'row-span-1 md:row-span-2' : ''
