@@ -18,7 +18,7 @@ export const businessConfig = {
 
     // Branding Assets
     assets: {
-        logo: '/assets/instagram/pregame.tw_2025-05-18_14-07-56_UTC_profile_pic.jpg',
+        logo: '/assets/branding/logo.jpg',
         logoAlt: 'PreGame Official Logo',
     },
 
