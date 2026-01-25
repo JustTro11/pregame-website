@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Link } from '@/app/i18n/routing';
 import { useTranslations } from 'next-intl';
-import LanguageSwitcher from './LanguageSwitcher';
+import LanguageSwitcher from '@/app/components/ui/LanguageSwitcher';
 import { Menu, X } from 'lucide-react';
 
 export default function Header() {

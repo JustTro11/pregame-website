@@ -19,7 +19,7 @@ export default function HomePage() {
             style={{ border: 0, borderRadius: '1rem' }}
             allowFullScreen
             loading="lazy"
-            className="grayscale hover:grayscale-0 transition-all duration-500"
+            className="w-full h-96"
           ></iframe>
         </div>
       </section>

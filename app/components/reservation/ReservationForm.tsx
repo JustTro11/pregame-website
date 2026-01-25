@@ -13,6 +13,7 @@ import Input from '@/app/components/ui/Input';
 import Button from '@/app/components/ui/Button';
 import Card from '@/app/components/ui/Card';
 import { Calendar, Clock, Users, User, Phone, CheckCircle2 } from 'lucide-react';
+import { createReservation } from '@/app/actions/reservation';
 
 type Inputs = {
     name: string;
@@ -50,27 +51,22 @@ export default function ReservationForm() {
 
         setIsSubmitting(true);
 
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1500));
-
-        // Generate random confirmation code
-        const code = Math.random().toString(36).substring(2, 8).toUpperCase();
-
-        // In a real app, we would save to Supabase here
-        const bookingData = {
+        // Call Server Action
+        const result = await createReservation({
             ...data,
             date: format(date, 'yyyy-MM-dd'),
             time,
             partySize,
-            code,
-            timestamp: new Date().toISOString(),
-        };
+        });
 
-        // Save to localStorage for demo/confirmation page
-        localStorage.setItem('lastBooking', JSON.stringify(bookingData));
+        if (result.error) {
+            alert(result.error); // Simple error handling for now
+            setIsSubmitting(false);
+            return;
+        }
 
         // Redirect to confirmation
-        router.push(`/confirmation?code=${code}`);
+        router.push(`/confirmation?code=${result.code}`);
         setIsSubmitting(false);
     };
 
@@ -112,7 +108,7 @@ export default function ReservationForm() {
             </div>
 
             {/* Step 2: Time Slots */}
-            <div className={`transition-all duration-500 ${isStep1Complete ? 'opacity-100 translate-y-0' : 'opacity-50 translate-y-4 pointer-events-none'}`}>
+            <div>
                 <Card className="space-y-4">
                     <div className="flex items-center gap-2 mb-4">
                         <Clock className="text-accent-primary" />
@@ -129,7 +125,7 @@ export default function ReservationForm() {
             </div>
 
             {/* Step 3: User Details */}
-            <div className={`transition-all duration-500 ${isStep2Complete ? 'opacity-100 translate-y-0' : 'opacity-50 translate-y-4 pointer-events-none'}`}>
+            <div>
                 <Card className="space-y-6">
                     <div className="flex items-center gap-2 mb-2">
                         <User className="text-accent-primary" />

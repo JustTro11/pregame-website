@@ -18,6 +18,7 @@ export default function CategoryFilter({
         { id: 'tea', label: t('category_tea') },
         { id: 'float', label: t('category_float') },
         { id: 'mocktail', label: t('category_mocktail') },
+        { id: 'food', label: t('category_food') },
     ];
 
     return (

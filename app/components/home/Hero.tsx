@@ -17,7 +17,7 @@ export default function Hero() {
             </div>
 
             <div className="container relative z-10 px-4 text-center">
-                <div className="animate-fade-in-up">
+                <div>
                     <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 tracking-tight">
                         <span className="text-white block">{t('title')}</span>
                         <span className="text-accent-primary text-3xl md:text-5xl lg:text-6xl block mt-2 font-light">

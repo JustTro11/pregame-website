@@ -36,10 +36,13 @@
     "menu": {
         "title": "Menu",
         "subtitle": "Our Drinks",
+        "section_drinks": "Signature Drinks",
+        "section_food": "Light Bites",
         "category_all": "All",
         "category_tea": "Tea",
         "category_float": "Float Sodas",
         "category_mocktail": "Mocktails",
+        "category_food": "Light Bites",
         "popular": "Popular",
         "new": "New"
     },
@@ -64,6 +67,7 @@
         "notes_label": "Notes",
         "notes_placeholder": "Special requests or notes...",
         "confirm_booking": "Confirm Reservation",
+        "select_date": "Select Date",
         "select_time": "Please select a time",
         "no_slots": "No available slots for this day",
         "closed": "Closed",

@@ -4,34 +4,90 @@ A modern, visually stunning website for PreGame (泡沫紅茶店), a coffee/tea 
 
 ## Decisions Made
 
-✅ **Backend:** Node.js + Express with SQLite database for reservations  
-✅ **Language:** Bilingual (繁體中文 primary, English secondary)  
+✅ **Backend:** Node.js + Express with SQLite database for reservations
+✅ **Language:** Bilingual (繁體中文 primary, English secondary)
 ✅ **Design:** Dark streetwear aesthetic with warm amber accents
+✅ **Database Update:** Switching to **Supabase (PostgreSQL)** for production-grade reliability and ease of use.
 
 ---
 
-## Proposed Changes
+## Phase 2: Supabase Integration (Backend)
 
-### Project Structure
+We are moving from a local-only demo to a live Supabase backend.
+
+### 1. Database Schema
+
+#### Table: `reservations`
+| Column | Type | Notes |
+|--------|------|-------|
+| `id` | uuid | Primary Key |
+| `created_at` | timestamptz | Auto-generated |
+| `date` | date | The booking date |
+| `time_slot` | time | The booking time |
+| `party_size` | int | Number of guests |
+| `customer_name` | text | |
+| `customer_phone` | text | |
+| `customer_email` | text | Optional |
+| `status` | text | 'confirmed', 'cancelled', 'completed' |
+| `confirmation_code` | text | Unique 6-char code |
+
+#### Table: `menu_categories`
+| Column | Type | Notes |
+|--------|------|-------|
+| `id` | uuid | PK |
+| `name_en` | text | e.g., "Tea Classics" |
+| `name_zh` | text | e.g., "經典茶飲" |
+| `sort_order` | int | For display ordering |
+
+#### Table: `menu_items`
+| Column | Type | Notes |
+|--------|------|-------|
+| `id` | uuid | PK |
+| `category_id` | uuid | FK to menu_categories |
+| `name_en` | text | |
+| `name_zh` | text | |
+| `description_en` | text | |
+| `description_zh` | text | |
+| `price` | int | TWD |
+| `image_url` | text | Supabase Storage URL |
+| `is_available` | boolean | default true |
+
+### 2. Infrastructure Setup
+- **Create Project:** "PreGame Website" in Organization `JustTro11's Org`.
+- **Region:** `asia-east1` (Taiwan) or `ap-northeast-1` (Tokyo) for lowest latency in Taiwan.
+- **Environment Variables:**
+    - `NEXT_PUBLIC_SUPABASE_URL`
+    - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+
+### 3. API & Integration
+- Install `@supabase/supabase-js`.
+- Create `lib/supabase.ts` client.
+- **Reservation Flow:**
+    1.  Check availability (Select count from `reservations` where date/time matches).
+    2.  Insert new record.
+    3.  Return confirmation.
+
+---
+
+## Phase 1: Frontend (In Progress)
+
+### Project Structure (Updated)
 
 ```
 C:\Users\jenti\.gemini\antigravity\scratch\pregame-website\
-├── index.html              # Homepage
-├── menu.html               # Menu/drinks page
-├── reservations.html       # Reservation system
-├── about.html              # About & location
-├── confirmation.html       # Reservation confirmation
-├── css/
-│   └── styles.css          # Design system & styles
-├── js/
-│   ├── main.js             # Global functionality
-│   ├── reservations.js     # Reservation logic
-│   └── menu.js             # Menu interactions
-└── assets/
-    └── images/             # Generated images
+├── app/
+│   ├── [locale]/
+│   │   ├── page.tsx            # Homepage
+│   │   ├── menu/page.tsx       # Menu (Fetch from Supabase)
+│   │   ├── reserve/page.tsx    # Reservation Form (Post to Supabase)
+│   │   ├── about/page.tsx      # About
+│   │   └── confirmation/page.tsx
+│   ├── api/
+│   │   └── webhooks/
+│   │       └── line/route.ts   # Future LINE Bot webhook
+├── lib/
+│   └── supabase.ts             # Database Client
 ```
-
----
 
 ### Core Design System
 
@@ -200,18 +256,19 @@ Select Date → Choose Time Slot → Select Party Size → Enter Details → Con
 
 ---
 
-## Development Order
+### Development Order (Updated)
 
 1. **Set up project structure** and basic HTML skeleton
 2. **Create design system** (`styles.css`) with all tokens
 3. **Build homepage** with all sections
-4. **Build reservation system** (priority #1 feature)
-5. **Build confirmation page**
-6. **Build menu page**
-7. **Build about page**
-8. **Add animations and polish**
-9. **Test on multiple devices**
-10. **Generate images** for drinks and hero
+4. **Setup Supabase Backend** (Create project, schema, client)
+5. **Build reservation system** connected to Supabase
+6. **Build confirmation page**
+7. **Build menu page**
+8. **Build about page**
+9. **Add animations and polish**
+10. **Test on multiple devices**
+11. **Generate images** for drinks and hero
 
 ---
 

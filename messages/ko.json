@@ -1,0 +1,120 @@
+{
+    "nav": {
+        "home": "홈",
+        "menu": "메뉴",
+        "reserve": "예약",
+        "about": "소개"
+    },
+    "common": {
+        "reserve_now": "지금 예약하기",
+        "view_menu": "메뉴 보기",
+        "learn_more": "더 알아보기",
+        "submit": "제출",
+        "cancel": "취소",
+        "confirm": "확인",
+        "back": "뒤로",
+        "loading": "로딩 중...",
+        "required": "필수",
+        "optional": "선택"
+    },
+    "hero": {
+        "title": "PreGame",
+        "subtitle": "★버블티 샵★",
+        "tagline": "클래식 대만 차 · 모던 바이브",
+        "cta_reserve": "예약하기",
+        "cta_menu": "메뉴 보기"
+    },
+    "home": {
+        "featured_title": "추천 음료",
+        "featured_subtitle": "시그니처 메뉴",
+        "about_title": "PreGame 소개",
+        "about_description": "타이난 중정로에 위치한 버블티 전문점. 전통 대만 차 문화를 현대적인 감각으로 재해석하여 특별한 음료 경험을 선사합니다.",
+        "location_title": "영업 정보",
+        "hours_title": "영업 시간",
+        "address_title": "주소"
+    },
+    "menu": {
+        "title": "메뉴",
+        "subtitle": "음료 리스트",
+        "section_drinks": "시그니처 음료",
+        "section_food": "간단한 식사",
+        "category_all": "전체",
+        "category_tea": "차",
+        "category_float": "플로트 소다",
+        "category_mocktail": "목테일",
+        "category_food": "간단한 식사",
+        "popular": "인기",
+        "new": "신메뉴"
+    },
+    "reserve": {
+        "title": "좌석 예약",
+        "subtitle": "원하시는 시간을 선택해주세요",
+        "step_date": "날짜 선택",
+        "step_time": "시간 선택",
+        "step_guests": "인원",
+        "step_details": "예약자 정보",
+        "date_label": "날짜",
+        "time_label": "시간",
+        "guests_label": "인원",
+        "name_label": "이름",
+        "name_placeholder": "이름을 입력해주세요",
+        "phone_label": "전화번호",
+        "phone_placeholder": "예: 0912-345-678",
+        "email_label": "이메일",
+        "email_placeholder": "example@email.com",
+        "line_label": "LINE ID",
+        "line_placeholder": "LINE ID (선택 사항)",
+        "notes_label": "요청사항",
+        "notes_placeholder": "특별 요청사항이 있다면 적어주세요...",
+        "confirm_booking": "예약 확정",
+        "select_date": "날짜 선택",
+        "select_time": "시간을 선택해주세요",
+        "no_slots": "예약 가능한 시간이 없습니다",
+        "closed": "휴무일",
+        "guests_singular": "명",
+        "guests_plural": "명"
+    },
+    "confirmation": {
+        "title": "예약 완료!",
+        "subtitle": "예약해주셔서 감사합니다",
+        "code_label": "예약 번호",
+        "details_title": "예약 상세",
+        "date": "날짜",
+        "time": "시간",
+        "guests": "인원",
+        "name": "이름",
+        "reminder": "예약 시간에 맞춰 도착해주시기 바랍니다. 취소나 변경이 필요한 경우 미리 연락주세요.",
+        "back_home": "홈으로 돌아가기"
+    },
+    "about": {
+        "title": "소개",
+        "story_title": "PreGame 스토리",
+        "story_content": "PreGame ★버블티 샵★은 클래식한 대만 차 문화와 현대적인 미학을 결합한 독특한 차 전문점입니다. 정통 버블티, 창의적인 플로트 소다, 그리고 세련된 목테일을 제공합니다.",
+        "location_title": "위치 및 영업 시간",
+        "find_us": "오시는 길",
+        "contact_title": "연락처"
+    },
+    "hours": {
+        "sunday": "일요일",
+        "monday": "월요일",
+        "tuesday": "화요일",
+        "wednesday": "수요일",
+        "thursday": "목요일",
+        "friday": "금요일",
+        "saturday": "토요일",
+        "closed": "휴무"
+    },
+    "footer": {
+        "copyright": "© 2026 PreGame ★버블티 샵★. All rights reserved.",
+        "follow_us": "팔로우",
+        "address": "타이난시 중서구 중정로 198호"
+    },
+    "errors": {
+        "required_field": "필수 항목입니다",
+        "invalid_phone": "올바른 전화번호를 입력해주세요",
+        "invalid_email": "올바른 이메일 주소를 입력해주세요",
+        "select_date": "날짜를 선택해주세요",
+        "select_time": "시간을 선택해주세요",
+        "select_guests": "인원을 선택해주세요"
+    }
+}

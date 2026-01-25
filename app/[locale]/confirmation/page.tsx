@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { useSearchParams } from 'next/navigation';
 import { Link } from '@/app/i18n/routing';
+import { supabase } from '@/lib/supabase';
 import Card from '@/app/components/ui/Card';
 import Button from '@/app/components/ui/Button';
 import { CheckCircle2, Calendar, Clock, Users, Home } from 'lucide-react';
@@ -14,15 +15,26 @@ export default function ConfirmationPage() {
     const code = searchParams.get('code');
 
     const [booking, setBooking] = useState<any>(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // In a real app, we might fetch from API using ID
-        // For MVP demo, retrieve from localStorage
-        const saved = localStorage.getItem('lastBooking');
-        if (saved) {
-            setBooking(JSON.parse(saved));
+        if (!code) return;
+
+        async function fetchBooking() {
+            const { data, error } = await supabase
+                .from('reservations')
+                .select('*')
+                .eq('confirmation_code', code)
+                .single();
+
+            if (data) {
+                setBooking(data);
+            }
+            setLoading(false);
         }
-    }, []);
+
+        fetchBooking();
+    }, [code]);
 
     if (!code) {
         return (
@@ -60,7 +72,7 @@ export default function ConfirmationPage() {
                             <Calendar size={18} className="text-text-secondary" />
                             <div>
                                 <span className="text-xs text-muted-foreground block">{t('date')}</span>
-                                <span className="font-medium">{booking?.date}</span>
+                                <span className="font-medium">{loading ? '...' : booking?.date}</span>
                             </div>
                         </div>
 
@@ -68,7 +80,7 @@ export default function ConfirmationPage() {
                             <Clock size={18} className="text-text-secondary" />
                             <div>
                                 <span className="text-xs text-muted-foreground block">{t('time')}</span>
-                                <span className="font-medium">{booking?.time} (1hr)</span>
+                                <span className="font-medium">{loading ? '...' : booking?.time_slot?.slice(0, 5)}</span>
                             </div>
                         </div>
 
@@ -76,7 +88,7 @@ export default function ConfirmationPage() {
                             <Users size={18} className="text-text-secondary" />
                             <div>
                                 <span className="text-xs text-muted-foreground block">{t('guests')}</span>
-                                <span className="font-medium">{booking?.partySize} People</span>
+                                <span className="font-medium">{loading ? '...' : booking?.party_size} People</span>
                             </div>
                         </div>
 

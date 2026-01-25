@@ -84,7 +84,7 @@ export default function AboutPage() {
                         style={{ border: 0 }}
                         allowFullScreen
                         loading="lazy"
-                        className="absolute inset-0 grayscale group-hover:grayscale-0 transition-all duration-700"
+                        className="absolute inset-0"
                     ></iframe>
                 </div>
             </div>

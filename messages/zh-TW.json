@@ -36,10 +36,13 @@
     "menu": {
         "title": "菜單",
         "subtitle": "精選飲品",
+        "section_drinks": "特色飲品",
+        "section_food": "精選餐點",
         "category_all": "全部",
         "category_tea": "茶飲",
         "category_float": "漂浮蘇打",
         "category_mocktail": "無酒精特調",
+        "category_food": "精選餐點",
         "popular": "人氣",
         "new": "新品"
     },
@@ -64,6 +67,7 @@
         "notes_label": "備註",
         "notes_placeholder": "特殊需求或其他備註...",
         "confirm_booking": "確認預約",
+        "select_date": "選擇日期",
         "select_time": "請選擇時間",
         "no_slots": "當日無可預約時段",
         "closed": "休息日",

@@ -22,6 +22,7 @@ export default function PartySizeSelector({
             {sizes.map((size) => (
                 <button
                     key={size}
+                    type="button"
                     onClick={() => onChange(size)}
                     className={`
             relative w-12 h-12 rounded-full flex items-center justify-center text-lg font-bold transition-all duration-200

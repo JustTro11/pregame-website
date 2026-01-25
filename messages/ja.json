@@ -1,0 +1,120 @@
+{
+    "nav": {
+        "home": "ホーム",
+        "menu": "メニュー",
+        "reserve": "予約",
+        "about": "当店について"
+    },
+    "common": {
+        "reserve_now": "今すぐ予約",
+        "view_menu": "メニューを見る",
+        "learn_more": "詳細を見る",
+        "submit": "送信",
+        "cancel": "キャンセル",
+        "confirm": "確認",
+        "back": "戻る",
+        "loading": "読み込み中...",
+        "required": "必須",
+        "optional": "任意"
+    },
+    "hero": {
+        "title": "PreGame",
+        "subtitle": "★バブルティーショップ★",
+        "tagline": "伝統的な台湾茶とモダンスタイルの融合",
+        "cta_reserve": "席を予約する",
+        "cta_menu": "メニューを見る"
+    },
+    "home": {
+        "featured_title": "おすすめドリンク",
+        "featured_subtitle": "当店自慢のシグネチャー",
+        "about_title": "PreGameについて",
+        "about_description": "台南市中正路にあるバブルティーショップ。伝統的な台湾茶文化と現代的なフレーバーを融合させ、ユニークなドリンク体験を提供します。",
+        "location_title": "店舗情報",
+        "hours_title": "営業時間",
+        "address_title": "住所"
+    },
+    "menu": {
+        "title": "メニュー",
+        "subtitle": "ドリンク一覧",
+        "section_drinks": "シグネチャードリンク",
+        "section_food": "軽食",
+        "category_all": "すべて",
+        "category_tea": "お茶",
+        "category_float": "フロートソーダ",
+        "category_mocktail": "モクテル",
+        "category_food": "軽食",
+        "popular": "人気",
+        "new": "新作"
+    },
+    "reserve": {
+        "title": "席を予約する",
+        "subtitle": "ご希望の時間をお選びください",
+        "step_date": "日付選択",
+        "step_time": "時間選択",
+        "step_guests": "人数",
+        "step_details": "お客様情報",
+        "date_label": "日付",
+        "time_label": "時間",
+        "guests_label": "人数",
+        "name_label": "お名前",
+        "name_placeholder": "お名前を入力",
+        "phone_label": "電話番号",
+        "phone_placeholder": "例：0912-345-678",
+        "email_label": "メールアドレス",
+        "email_placeholder": "example@email.com",
+        "line_label": "LINE ID",
+        "line_placeholder": "LINE ID（任意）",
+        "notes_label": "備考",
+        "notes_placeholder": "ご要望など...",
+        "confirm_booking": "予約を確定する",
+        "select_date": "日付を選択",
+        "select_time": "時間を選択してください",
+        "no_slots": "空き枠がありません",
+        "closed": "定休日",
+        "guests_singular": "名",
+        "guests_plural": "名"
+    },
+    "confirmation": {
+        "title": "予約完了！",
+        "subtitle": "ご予約ありがとうございます",
+        "code_label": "予約番号",
+        "details_title": "予約詳細",
+        "date": "日付",
+        "time": "時間",
+        "guests": "人数",
+        "name": "お名前",
+        "reminder": "予約時間にお越しください。変更やキャンセルが必要な場合は事前にご連絡ください。",
+        "back_home": "ホームに戻る"
+    },
+    "about": {
+        "title": "当店について",
+        "story_title": "PreGameのストーリー",
+        "story_content": "PreGame ★バブルティーショップ★ は、伝統的な台湾茶文化と現代的な美学を融合させたユニークなお店です。本格的なバブルティー、クリエイティブなフロートソーダ、洗練されたノンアルコールドリンクを提供しています。",
+        "location_title": "アクセス・営業時間",
+        "find_us": "アクセス",
+        "contact_title": "お問い合わせ"
+    },
+    "hours": {
+        "sunday": "日曜日",
+        "monday": "月曜日",
+        "tuesday": "火曜日",
+        "wednesday": "水曜日",
+        "thursday": "木曜日",
+        "friday": "金曜日",
+        "saturday": "土曜日",
+        "closed": "定休日"
+    },
+    "footer": {
+        "copyright": "© 2026 PreGame ★バブルティーショップ★. All rights reserved.",
+        "follow_us": "フォローする",
+        "address": "台南市中西区中正路198号"
+    },
+    "errors": {
+        "required_field": "必須項目です",
+        "invalid_phone": "有効な電話番号を入力してください",
+        "invalid_email": "有効なメールアドレスを入力してください",
+        "select_date": "日付を選択してください",
+        "select_time": "時間を選択してください",
+        "select_guests": "人数を選択してください"
+    }
+}
