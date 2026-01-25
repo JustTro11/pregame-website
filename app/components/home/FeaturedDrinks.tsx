@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 import Card from '@/app/components/ui/Card';
 import { Link } from '@/app/i18n/routing';
 import Button from '@/app/components/ui/Button';
@@ -9,18 +10,27 @@ import Button from '@/app/components/ui/Button';
 const drinks = [
     {
         id: 1,
-        image: '/drink-1.jpg',
-        bg: 'bg-amber-900/20',
+        name: 'Irish Coffee',
+        price: '180',
+        pairing: 'Vintage Denim & Eames Seating',
+        image: '/assets/instagram/2025-06-06_13-29-03_UTC.jpg',
+        bg: 'bg-red-900/10',
     },
     {
         id: 2,
-        image: '/drink-2.jpg',
-        bg: 'bg-orange-900/20',
+        name: 'Signature Soda Float',
+        price: '160',
+        pairing: 'Fresh Kicks & City Lights',
+        image: '/assets/instagram/2025-06-30_04-00-06_UTC.jpg',
+        bg: 'bg-cream/5',
     },
     {
         id: 3,
-        image: '/drink-3.jpg',
-        bg: 'bg-red-900/20',
+        name: 'Craft Mocktail',
+        price: '200',
+        pairing: 'Late Night Beats & Oversized Tees',
+        image: '/assets/instagram/2026-01-23_09-13-11_UTC_1.jpg',
+        bg: 'bg-black/20',
     },
 ];
 
@@ -48,10 +58,13 @@ export default function FeaturedDrinks() {
                         >
                             <Card variant="glass" hoverEffect className="h-full flex flex-col items-center text-center group overflow-hidden p-0 border-white/5">
                                 <div className={`w-full aspect-[4/5] ${drink.bg} relative overflow-hidden`}>
-                                    {/* Placeholder for real image */}
-                                    <div className="absolute inset-0 flex items-center justify-center text-white/20 font-heading text-4xl font-bold uppercase tracking-widest group-hover:scale-110 transition-transform duration-700">
-                                        Drink {drink.id}
-                                    </div>
+                                    <Image
+                                        src={drink.image}
+                                        alt={drink.name}
+                                        fill
+                                        className="object-cover group-hover:scale-110 transition-transform duration-700"
+                                        sizes="(max-width: 768px) 100vw, 33vw"
+                                    />
 
                                     {/* Overlay on hover */}
                                     <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -63,9 +76,17 @@ export default function FeaturedDrinks() {
                                     </div>
                                 </div>
 
-                                <div className="p-6 w-full bg-bg-card/50 backdrop-blur-md">
-                                    <h3 className="text-xl font-bold mb-1">Signature Drink {drink.id}</h3>
-                                    <p className="text-accent-primary font-mono">$120</p>
+                                <div className="p-8 w-full bg-bg-card/50 backdrop-blur-md flex-grow flex flex-col justify-between">
+                                    <div>
+                                        <h3 className="text-2xl font-bold mb-2 font-heading tracking-tight">{drink.name}</h3>
+                                        <p className="text-xs font-mono uppercase tracking-[0.2em] text-accent-cream/60 mb-4">
+                                            {t('pairing_label')}: <span className="text-accent-cream">{drink.pairing}</span>
+                                        </p>
+                                    </div>
+                                    <div className="flex items-center justify-center gap-2">
+                                        <span className="text-xs text-muted-foreground">$</span>
+                                        <p className="text-2xl font-bold text-accent-primary font-mono">{drink.price}</p>
+                                    </div>
                                 </div>
                             </Card>
                         </div>

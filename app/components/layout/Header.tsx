@@ -3,8 +3,10 @@
 import { useState } from 'react';
 import { Link } from '@/app/i18n/routing';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 import LanguageSwitcher from '@/app/components/ui/LanguageSwitcher';
 import { Menu, X } from 'lucide-react';
+import { businessConfig } from '@/app/config/business';
 
 export default function Header() {
     const t = useTranslations('nav');
@@ -22,8 +24,18 @@ export default function Header() {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     {/* Logo */}
-                    <Link href="/" className="text-xl font-bold font-heading text-accent-primary hover:text-accent-secondary transition-colors">
-                        PreGame
+                    <Link href="/" className="flex items-center gap-2 group">
+                        <div className="relative w-10 h-10 overflow-hidden rounded-full border border-white/10 group-hover:border-accent-primary transition-colors">
+                            <Image
+                                src={businessConfig.assets.logo}
+                                alt={businessConfig.assets.logoAlt}
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
+                        <span className="text-xl font-bold font-heading text-white group-hover:text-accent-primary transition-colors">
+                            PreGame
+                        </span>
                     </Link>
 
                     {/* Desktop Navigation */}

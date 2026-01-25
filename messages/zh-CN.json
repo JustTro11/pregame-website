@@ -25,11 +25,17 @@
         "cta_menu": "浏览菜单"
     },
     "home": {
-        "featured_title": "人气饮品",
-        "featured_subtitle": "我们的招牌特调",
+        "featured_title": "精选饮品",
+        "featured_subtitle": "我们的招牌创作",
+        "lookbook_title": "品牌风格集",
+        "lookbook_subtitle": "在 Blank Galleria 内，街头文化与台湾茶文化的完美邂逅。",
+        "lookbook_cta": "加入我们",
+        "pairing_label": "推荐搭配",
         "about_title": "关于 PreGame",
-        "about_description": "位于台南中正路的泡沫红茶店，结合经典台式茶饮与现代风味，为您带来独特的饮品体验。",
-        "location_title": "营业信息",
+        "about_description": "位于台南中正路的泡沫红茶店，将经典台湾茶文化与现代美学结合，带给您独特的饮品体验。",
+        "location_title": "寻找我们",
+        "location_subtitle": "位于 Blank Galleria 深处。跟着红光走。",
+        "location_floor": "Blank Galleria 2F",
         "hours_title": "营业时间",
         "address_title": "地址"
     },

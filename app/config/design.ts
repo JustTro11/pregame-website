@@ -19,14 +19,15 @@ export const designTokens = {
 
         // Accent colors
         accent: {
-            primary: '#E8A849',    // Warm amber - CTAs, links
-            secondary: '#D4943F',  // Darker amber - hover states
-            tertiary: '#C47F2E',   // Even darker - active states
+            primary: '#8B1D24',    // PreGame Red (authentic brand color from cups/matches)
+            secondary: '#A52A2A',  // Lighter red for hover
+            tertiary: '#6D1217',   // Darker red for active
+            cream: '#F2E8D5',      // Cream/off-white (from cup rims and menus)
         },
 
         // Text colors
         text: {
-            primary: '#FFFFFF',    // Main text
+            primary: '#F2E8D5',    // Cream primary text
             secondary: '#A0A0A0',  // Muted text
             muted: '#666666',      // Very muted
             inverse: '#0A0A0A',    // Text on light backgrounds
@@ -41,7 +42,7 @@ export const designTokens = {
         border: {
             default: '#2A2A2A',
             hover: '#3A3A3A',
-            focus: '#E8A849',
+            focus: '#8B1D24',
         },
     },
 

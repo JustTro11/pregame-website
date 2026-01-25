@@ -27,9 +27,15 @@
     "home": {
         "featured_title": "Featured Drinks",
         "featured_subtitle": "Our signature creations",
+        "lookbook_title": "The Lookbook",
+        "lookbook_subtitle": "Streetwear culture meets Taiwanese tea tradition inside Blank Galleria.",
+        "lookbook_cta": "Follow the Tribe",
+        "pairing_label": "Pairs with",
         "about_title": "About PreGame",
         "about_description": "A bubble tea shop on Jhongjheng Road in Tainan, blending classic Taiwanese tea culture with modern flavors to bring you a unique drinking experience.",
-        "location_title": "Visit Us",
+        "location_title": "Find Us",
+        "location_subtitle": "Located deep inside Blank Galleria. Follow the red light.",
+        "location_floor": "Blank Galleria 2F",
         "hours_title": "Hours",
         "address_title": "Address"
     },

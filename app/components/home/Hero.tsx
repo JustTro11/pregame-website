@@ -10,17 +10,17 @@ export default function Hero() {
     return (
         <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
             {/* Background with overlay */}
-            <div className="absolute inset-0 bg-[url('/hero-placeholder.jpg')] bg-cover bg-center">
-                <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]" />
+            <div className="absolute inset-0 bg-[url('/assets/instagram/2026-01-05_12-00-18_UTC.jpg')] bg-cover bg-center">
+                <div className="absolute inset-0 bg-black/70 backdrop-blur-[1px]" />
                 {/* Gradient overlay for text readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-bg-primary via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-bg-primary via-black/20 to-transparent" />
             </div>
 
             <div className="container relative z-10 px-4 text-center">
                 <div>
-                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 tracking-tight">
-                        <span className="text-white block">{t('title')}</span>
-                        <span className="text-accent-primary text-3xl md:text-5xl lg:text-6xl block mt-2 font-light">
+                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 tracking-tighter">
+                        <span className="text-white block uppercase tracking-tight">{t('title')}</span>
+                        <span className="text-accent-cream text-3xl md:text-5xl lg:text-6xl block mt-2 font-light italic">
                             {t('subtitle')}
                         </span>
                     </h1>

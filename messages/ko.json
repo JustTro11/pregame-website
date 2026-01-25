@@ -25,11 +25,17 @@
         "cta_menu": "메뉴 보기"
     },
     "home": {
-        "featured_title": "추천 음료",
-        "featured_subtitle": "시그니처 메뉴",
-        "about_title": "PreGame 소개",
-        "about_description": "타이난 중정로에 위치한 버블티 전문점. 전통 대만 차 문화를 현대적인 감각으로 재해석하여 특별한 음료 경험을 선사합니다.",
-        "location_title": "영업 정보",
+        "featured_title": "추천 메뉴",
+        "featured_subtitle": "시그니처 창작 음료",
+        "lookbook_title": "룩북",
+        "lookbook_subtitle": "Blank Galleria 내에서 만나는 스트릿 문화와 대만 차 문화의 융합.",
+        "lookbook_cta": "커뮤니티 가입",
+        "pairing_label": "추천 페어링",
+        "about_title": "PreGame 정보",
+        "about_description": "타이난 중정로에 위치한 버블티 샵으로, 클래식한 대만 차 문화와 현대적인 감각을 결합하여 독특한 경험을 선사합니다.",
+        "location_title": "찾아오시는 길",
+        "location_subtitle": "Blank Galleria 안쪽 깊은 곳에 있습니다. 붉은 빛을 따라오세요.",
+        "location_floor": "Blank Galleria 2F",
         "hours_title": "영업 시간",
         "address_title": "주소"
     },

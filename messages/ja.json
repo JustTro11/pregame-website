@@ -25,11 +25,17 @@
         "cta_menu": "メニューを見る"
     },
     "home": {
-        "featured_title": "おすすめドリンク",
-        "featured_subtitle": "当店自慢のシグネチャー",
+        "featured_title": "おすすめのドリンク",
+        "featured_subtitle": "店主こだわりの一杯",
+        "lookbook_title": "ルックブック",
+        "lookbook_subtitle": "Blank Galleria内で出会う、ストリートカルチャーと台湾茶の新しい融合。",
+        "lookbook_cta": "コミュニティに参加",
+        "pairing_label": "おすすめの組み合わせ",
         "about_title": "PreGameについて",
-        "about_description": "台南市中正路にあるバブルティーショップ。伝統的な台湾茶文化と現代的なフレーバーを融合させ、ユニークなドリンク体験を提供します。",
-        "location_title": "店舗情報",
+        "about_description": "台南市中正路に位置し、伝統的な台湾茶とモダンな感性を融合させた、新しいスタイルのティースタンドです。",
+        "location_title": "アクセス",
+        "location_subtitle": "Blank Galleriaの奥にあります。赤い光を目印にお越しください。",
+        "location_floor": "Blank Galleria 2F",
         "hours_title": "営業時間",
         "address_title": "住所"
     },

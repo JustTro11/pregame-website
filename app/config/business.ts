@@ -16,6 +16,12 @@ export const businessConfig = {
         en: 'Classic Taiwanese Tea · Modern Vibes',
     },
 
+    // Branding Assets
+    assets: {
+        logo: '/assets/instagram/pregame.tw_2025-05-18_14-07-56_UTC_profile_pic.jpg',
+        logoAlt: 'PreGame Official Logo',
+    },
+
     // Location
     address: {
         full: {
