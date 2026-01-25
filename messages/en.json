@@ -1,0 +1,116 @@
+{
+    "nav": {
+        "home": "Home",
+        "menu": "Menu",
+        "reserve": "Reserve",
+        "about": "About"
+    },
+    "common": {
+        "reserve_now": "Reserve Now",
+        "view_menu": "View Menu",
+        "learn_more": "Learn More",
+        "submit": "Submit",
+        "cancel": "Cancel",
+        "confirm": "Confirm",
+        "back": "Back",
+        "loading": "Loading...",
+        "required": "Required",
+        "optional": "Optional"
+    },
+    "hero": {
+        "title": "PreGame",
+        "subtitle": "★Bubble Tea Shop★",
+        "tagline": "Classic Taiwanese Tea · Modern Vibes",
+        "cta_reserve": "Reserve a Table",
+        "cta_menu": "View Menu"
+    },
+    "home": {
+        "featured_title": "Featured Drinks",
+        "featured_subtitle": "Our signature creations",
+        "about_title": "About PreGame",
+        "about_description": "A bubble tea shop on Jhongjheng Road in Tainan, blending classic Taiwanese tea culture with modern flavors to bring you a unique drinking experience.",
+        "location_title": "Visit Us",
+        "hours_title": "Hours",
+        "address_title": "Address"
+    },
+    "menu": {
+        "title": "Menu",
+        "subtitle": "Our Drinks",
+        "category_all": "All",
+        "category_tea": "Tea",
+        "category_float": "Float Sodas",
+        "category_mocktail": "Mocktails",
+        "popular": "Popular",
+        "new": "New"
+    },
+    "reserve": {
+        "title": "Reserve a Table",
+        "subtitle": "Choose your preferred time",
+        "step_date": "Select Date",
+        "step_time": "Select Time",
+        "step_guests": "Guests",
+        "step_details": "Your Details",
+        "date_label": "Date",
+        "time_label": "Time",
+        "guests_label": "Number of Guests",
+        "name_label": "Name",
+        "name_placeholder": "Enter your name",
+        "phone_label": "Phone",
+        "phone_placeholder": "e.g., 0912-345-678",
+        "email_label": "Email",
+        "email_placeholder": "example@email.com",
+        "line_label": "LINE ID",
+        "line_placeholder": "Your LINE ID (optional)",
+        "notes_label": "Notes",
+        "notes_placeholder": "Special requests or notes...",
+        "confirm_booking": "Confirm Reservation",
+        "select_time": "Please select a time",
+        "no_slots": "No available slots for this day",
+        "closed": "Closed",
+        "guests_singular": "guest",
+        "guests_plural": "guests"
+    },
+    "confirmation": {
+        "title": "Reservation Confirmed!",
+        "subtitle": "Thank you for your booking",
+        "code_label": "Confirmation Code",
+        "details_title": "Reservation Details",
+        "date": "Date",
+        "time": "Time",
+        "guests": "Guests",
+        "name": "Name",
+        "reminder": "Please arrive on time. Contact us if you need to cancel or modify your reservation.",
+        "back_home": "Back to Home"
+    },
+    "about": {
+        "title": "About Us",
+        "story_title": "The PreGame Story",
+        "story_content": "PreGame ★Bubble Tea Shop★ is a unique tea shop that combines classic Taiwanese tea culture with modern aesthetics. We're dedicated to serving authentic bubble tea, creative float sodas, and refined non-alcoholic specialty drinks.",
+        "location_title": "Location & Hours",
+        "find_us": "Find Us",
+        "contact_title": "Contact Us"
+    },
+    "hours": {
+        "sunday": "Sunday",
+        "monday": "Monday",
+        "tuesday": "Tuesday",
+        "wednesday": "Wednesday",
+        "thursday": "Thursday",
+        "friday": "Friday",
+        "saturday": "Saturday",
+        "closed": "Closed"
+    },
+    "footer": {
+        "copyright": "© 2026 PreGame ★Bubble Tea Shop★. All rights reserved.",
+        "follow_us": "Follow Us",
+        "address": "No. 198, Jhongjheng Rd, West Central District, Tainan City"
+    },
+    "errors": {
+        "required_field": "This field is required",
+        "invalid_phone": "Please enter a valid phone number",
+        "invalid_email": "Please enter a valid email address",
+        "select_date": "Please select a date",
+        "select_time": "Please select a time",
+        "select_guests": "Please select number of guests"
+    }
+}

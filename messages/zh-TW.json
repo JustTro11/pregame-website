@@ -1,0 +1,116 @@
+{
+    "nav": {
+        "home": "首頁",
+        "menu": "菜單",
+        "reserve": "預約",
+        "about": "關於我們"
+    },
+    "common": {
+        "reserve_now": "立即預約",
+        "view_menu": "查看菜單",
+        "learn_more": "了解更多",
+        "submit": "送出",
+        "cancel": "取消",
+        "confirm": "確認",
+        "back": "返回",
+        "loading": "載入中...",
+        "required": "必填",
+        "optional": "選填"
+    },
+    "hero": {
+        "title": "PreGame",
+        "subtitle": "★泡沫紅茶店★",
+        "tagline": "經典台式茶飲・現代風味",
+        "cta_reserve": "預約座位",
+        "cta_menu": "瀏覽菜單"
+    },
+    "home": {
+        "featured_title": "人氣飲品",
+        "featured_subtitle": "我們的招牌特調",
+        "about_title": "關於 PreGame",
+        "about_description": "位於台南中正路的泡沫紅茶店，結合經典台式茶飲與現代風味，為您帶來獨特的飲品體驗。",
+        "location_title": "營業資訊",
+        "hours_title": "營業時間",
+        "address_title": "地址"
+    },
+    "menu": {
+        "title": "菜單",
+        "subtitle": "精選飲品",
+        "category_all": "全部",
+        "category_tea": "茶飲",
+        "category_float": "漂浮蘇打",
+        "category_mocktail": "無酒精特調",
+        "popular": "人氣",
+        "new": "新品"
+    },
+    "reserve": {
+        "title": "預約座位",
+        "subtitle": "選擇您的用餐時間",
+        "step_date": "選擇日期",
+        "step_time": "選擇時間",
+        "step_guests": "人數",
+        "step_details": "聯絡資訊",
+        "date_label": "日期",
+        "time_label": "時間",
+        "guests_label": "人數",
+        "name_label": "姓名",
+        "name_placeholder": "請輸入您的姓名",
+        "phone_label": "電話",
+        "phone_placeholder": "例：0912-345-678",
+        "email_label": "電子郵件",
+        "email_placeholder": "example@email.com",
+        "line_label": "LINE ID",
+        "line_placeholder": "您的 LINE ID（選填）",
+        "notes_label": "備註",
+        "notes_placeholder": "特殊需求或其他備註...",
+        "confirm_booking": "確認預約",
+        "select_time": "請選擇時間",
+        "no_slots": "當日無可預約時段",
+        "closed": "休息日",
+        "guests_singular": "位",
+        "guests_plural": "位"
+    },
+    "confirmation": {
+        "title": "預約成功！",
+        "subtitle": "感謝您的預約",
+        "code_label": "預約編號",
+        "details_title": "預約詳情",
+        "date": "日期",
+        "time": "時間",
+        "guests": "人數",
+        "name": "姓名",
+        "reminder": "請於預約時間準時抵達，如需取消或更改請提前聯繫我們。",
+        "back_home": "返回首頁"
+    },
+    "about": {
+        "title": "關於我們",
+        "story_title": "PreGame 的故事",
+        "story_content": "PreGame ★泡沫紅茶店★ 是一間結合經典台式茶飲文化與現代美學的特色茶店。我們致力於提供最道地的泡沫紅茶、創意漂浮蘇打，以及精緻的無酒精特調。",
+        "location_title": "位置與營業時間",
+        "find_us": "如何抵達",
+        "contact_title": "聯絡我們"
+    },
+    "hours": {
+        "sunday": "週日",
+        "monday": "週一",
+        "tuesday": "週二",
+        "wednesday": "週三",
+        "thursday": "週四",
+        "friday": "週五",
+        "saturday": "週六",
+        "closed": "休息"
+    },
+    "footer": {
+        "copyright": "© 2026 PreGame ★泡沫紅茶店★. All rights reserved.",
+        "follow_us": "追蹤我們",
+        "address": "台南市中西區中正路198號"
+    },
+    "errors": {
+        "required_field": "此欄位為必填",
+        "invalid_phone": "請輸入有效的電話號碼",
+        "invalid_email": "請輸入有效的電子郵件",
+        "select_date": "請選擇日期",
+        "select_time": "請選擇時間",
+        "select_guests": "請選擇人數"
+    }
+}
