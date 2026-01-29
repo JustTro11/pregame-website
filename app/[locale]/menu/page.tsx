@@ -4,6 +4,15 @@ import CategoryFilter from '@/app/components/menu/CategoryFilter';
 import { getMenuItems } from '@/app/actions/menu';
 import MenuClient from '@/app/components/menu/MenuClient';
 
+export async function generateMetadata(props: { params: Promise<{ locale: string }> }) {
+    const params = await props.params;
+    const { locale } = params;
+    const t = await getTranslations({ locale, namespace: 'menu' });
+    return {
+        title: t('title'),
+    };
+}
+
 export default async function MenuPage() {
     const t = await getTranslations('menu');
     const items = await getMenuItems();

@@ -42,3 +42,6 @@ next-env.d.ts
 
 # instagram assets (hosted on Supabase, not GitHub)
 /public/assets/instagram/
+
+playwright-report/
+test-results/
