@@ -37,6 +37,19 @@ describe('Business Logic Config', () => {
             const lateHours = { open: '15:00', close: '01:00' };
             expect(formatHoursDisplay(lateHours, 'en')).toBe('3 PM - 1 AM');
         });
+
+        it('should handle noon and midnight correctly', () => {
+            const noon = { open: '12:00', close: '13:00' };
+            expect(formatHoursDisplay(noon, 'en')).toBe('12 PM - 1 PM');
+
+            const midnight = { open: '18:00', close: '00:00' };
+            expect(formatHoursDisplay(midnight, 'en')).toBe('6 PM - 12 AM');
+        });
+
+        it('should handle non-zero minutes', () => {
+            const halfPast = { open: '14:30', close: '15:45' };
+            expect(formatHoursDisplay(halfPast, 'en')).toBe('2:30 PM - 3:45 PM');
+        });
     });
 
     describe('Configuration Integrity', () => {
