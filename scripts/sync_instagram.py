@@ -53,13 +53,19 @@ def sync_instagram():
             count += 1
 
     for post in posts:
+        is_pinned = getattr(post, 'is_pinned', False)
+        
         # Check if already in DB
-        res = supabase.table("instagram_posts").select("shortcode").eq("shortcode", post.shortcode).execute()
+        res = supabase.table("instagram_posts").select("*").eq("shortcode", post.shortcode).execute()
         if res.data:
-            print(f"Post {post.shortcode} already exists, skipping.")
+            print(f"Post {post.shortcode} exists. Updating metadata (pinned={is_pinned}).")
+            supabase.table("instagram_posts").update({
+                "is_featured": is_pinned,
+                "caption": post.caption or ""
+            }).eq("shortcode", post.shortcode).execute()
             continue
 
-        print(f"Processing new post: {post.shortcode}...")
+        print(f"Processing new post: {post.shortcode} (pinned={is_pinned})...")
 
         # Download image
         image_url = post.url
@@ -87,7 +93,7 @@ def sync_instagram():
                 "instagram_url": f"https://instagram.com/p/{post.shortcode}/",
                 "caption": post.caption or "",
                 "created_at": post.date_utc.isoformat(),
-                "is_featured": False
+                "is_featured": is_pinned
             }).execute()
             
             print(f"Successfully synced {post.shortcode}")

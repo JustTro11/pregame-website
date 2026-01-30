@@ -15,6 +15,7 @@ export async function getInstagramPosts(limit = 12) {
         const { data, error } = await supabase
             .from('instagram_posts')
             .select('*')
+            .order('is_featured', { ascending: false })
             .order('created_at', { ascending: false })
             .limit(limit);
 
