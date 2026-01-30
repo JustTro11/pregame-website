@@ -12,8 +12,12 @@ SUPABASE_URL = os.environ.get("NEXT_PUBLIC_SUPABASE_URL")
 # IMPORTANT: Need Service Role Key for writes from script
 SUPABASE_KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY")
 
+if not SUPABASE_URL:
+    print("Error: Missing NEXT_PUBLIC_SUPABASE_URL environment variable.")
+if not SUPABASE_KEY:
+    print("Error: Missing SUPABASE_SERVICE_ROLE_KEY environment variable.")
+
 if not SUPABASE_URL or not SUPABASE_KEY:
-    print("Error: Missing Supabase environment variables.")
     exit(1)
 
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
