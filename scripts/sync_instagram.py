@@ -8,14 +8,10 @@ from datetime import datetime
 # Load env vars
 load_dotenv(os.path.join(os.path.dirname(__file__), '../.env.local'))
 
-SUPABASE_URL = os.environ.get("NEXT_PUBLIC_SUPABASE_URL")
-if SUPABASE_URL is None:
-    print("Error: NEXT_PUBLIC_SUPABASE_URL is not set in environment (None).")
-elif SUPABASE_URL == "":
-    print("Error: NEXT_PUBLIC_SUPABASE_URL is set but empty. Check if GitHub Secret is empty or misconfigured.")
+SUPABASE_URL = os.environ.get("NEXT_PUBLIC_SUPABASE_URL", "").strip() or None
 
 # IMPORTANT: Need Service Role Key for writes from script
-SUPABASE_KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY")
+SUPABASE_KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY", "").strip() or None
 
 if SUPABASE_KEY is None:
     print("Error: SUPABASE_SERVICE_ROLE_KEY is not set in environment (None).")
