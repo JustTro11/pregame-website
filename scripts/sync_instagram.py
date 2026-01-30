@@ -14,6 +14,9 @@ if SUPABASE_URL is None:
 elif SUPABASE_URL == "":
     print("Error: NEXT_PUBLIC_SUPABASE_URL is set but empty. Check if GitHub Secret is empty or misconfigured.")
 
+# IMPORTANT: Need Service Role Key for writes from script
+SUPABASE_KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY")
+
 if SUPABASE_KEY is None:
     print("Error: SUPABASE_SERVICE_ROLE_KEY is not set in environment (None).")
 elif SUPABASE_KEY == "":
