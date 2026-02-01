@@ -82,7 +82,6 @@ describe('ReservationForm', () => {
     });
 
     it('handles submission error', async () => {
-        const alertSpy = jest.spyOn(window, 'alert').mockImplementation(() => { });
         (createReservation as jest.Mock).mockResolvedValue({ error: 'Failed' });
 
         render(<ReservationForm />);
@@ -95,17 +94,14 @@ describe('ReservationForm', () => {
 
         fireEvent.click(screen.getByText('confirm_booking'));
 
-        await waitFor(() => {
-            expect(alertSpy).toHaveBeenCalledWith('Failed');
-        });
+        // Check for error message in UI
+        expect(await screen.findByText('Failed')).toBeInTheDocument();
 
         // Wait for loading to finish
         await waitFor(() => {
             const btn = screen.getByText('confirm_booking').closest('button');
             expect(btn).not.toBeDisabled();
         });
-
-        alertSpy.mockRestore();
 
         // callback to prevent act warning from RHF internal state updates
         await act(async () => { await new Promise(resolve => setTimeout(resolve, 0)); });

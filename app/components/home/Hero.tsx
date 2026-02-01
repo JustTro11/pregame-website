@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/app/i18n/routing';
 import Button from '@/app/components/ui/Button';
@@ -10,7 +11,15 @@ export default function Hero() {
     return (
         <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
             {/* Background with overlay */}
-            <div className="absolute inset-0 bg-[url('/assets/instagram/2026-01-05_12-00-18_UTC.jpg')] bg-cover bg-center">
+            <div className="absolute inset-0">
+                <Image
+                    src="/assets/instagram/2026-01-05_12-00-18_UTC.jpg"
+                    alt="Hero Background"
+                    fill
+                    priority
+                    className="object-cover object-center"
+                    sizes="100vw"
+                />
                 <div className="absolute inset-0 bg-black/70 backdrop-blur-[1px]" />
                 {/* Gradient overlay for text readability */}
                 <div className="absolute inset-0 bg-gradient-to-t from-bg-primary via-black/20 to-transparent" />

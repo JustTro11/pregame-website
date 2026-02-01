@@ -13,7 +13,7 @@ const drinks = [
         name: 'Irish Coffee',
         price: '180',
         pairing: 'Vintage Denim & Eames Seating',
-        image: 'https://ebctnryujebfmewlczey.supabase.co/storage/v1/object/public/instagram-assets/posts/2025-06-06_13-29-03_UTC.jpg',
+        image: '/drink-1.jpg',
         bg: 'bg-red-900/10',
     },
     {
@@ -21,7 +21,7 @@ const drinks = [
         name: 'Signature Soda Float',
         price: '160',
         pairing: 'Fresh Kicks & City Lights',
-        image: 'https://ebctnryujebfmewlczey.supabase.co/storage/v1/object/public/instagram-assets/posts/2025-06-30_04-00-06_UTC.jpg',
+        image: '/drink-2.jpg',
         bg: 'bg-cream/5',
     },
     {
@@ -29,7 +29,7 @@ const drinks = [
         name: 'Craft Mocktail',
         price: '200',
         pairing: 'Late Night Beats & Oversized Tees',
-        image: 'https://ebctnryujebfmewlczey.supabase.co/storage/v1/object/public/instagram-assets/posts/2026-01-23_09-13-11_UTC_1.jpg',
+        image: '/drink-3.jpg',
         bg: 'bg-black/20',
     },
 ];

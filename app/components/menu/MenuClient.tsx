@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { useTranslations } from 'next-intl';
 import DrinkCard from '@/app/components/menu/DrinkCard';
 import CategoryFilter from '@/app/components/menu/CategoryFilter';
@@ -14,11 +14,21 @@ export default function MenuClient({ initialItems }: MenuClientProps) {
     const t = useTranslations('menu');
     const [category, setCategory] = useState('all');
 
-    // Helper to check if item is food
-    const isFood = (item: MenuItem) => {
-        const catName = item.category?.name_en.toLowerCase() || '';
-        return catName.includes('bites') || catName.includes('food');
-    };
+    const { foodItems, drinkItems } = useMemo(() => {
+        const food: MenuItem[] = [];
+        const drink: MenuItem[] = [];
+
+        initialItems.forEach(item => {
+            const catName = item.category?.name_en.toLowerCase() || '';
+            if (catName.includes('bites') || catName.includes('food')) {
+                food.push(item);
+            } else {
+                drink.push(item);
+            }
+        });
+
+        return { foodItems: food, drinkItems: drink };
+    }, [initialItems]);
 
     // Helper to render grid
     const renderGrid = (items: MenuItem[]) => (
@@ -30,16 +40,18 @@ export default function MenuClient({ initialItems }: MenuClientProps) {
     );
 
     // Filter logic for specific category
-    const getFilteredItems = () => {
+    const filteredItems = useMemo(() => {
+        if (category === 'all') return [];
+
         return initialItems.filter(item => {
             const catName = item.category?.name_en.toLowerCase() || '';
             if (category === 'tea') return catName.includes('tea');
             if (category === 'float') return catName.includes('float');
             if (category === 'mocktail') return catName.includes('mocktail');
-            if (category === 'food') return isFood(item);
+            if (category === 'food') return catName.includes('bites') || catName.includes('food');
             return false;
         });
-    };
+    }, [category, initialItems]);
 
     return (
         <div>
@@ -56,26 +68,26 @@ export default function MenuClient({ initialItems }: MenuClientProps) {
                             <span className="w-1.5 h-6 bg-accent-primary rounded-full shadow-glow"></span>
                             {t('section_drinks')}
                         </h2>
-                        {renderGrid(initialItems.filter(i => !isFood(i)))}
+                        {renderGrid(drinkItems)}
                     </section>
 
                     {/* Food Section */}
-                    {initialItems.some(i => isFood(i)) && (
+                    {foodItems.length > 0 && (
                         <section>
                             <h2 className="text-2xl font-bold font-heading mb-6 flex items-center gap-3 text-white/90">
                                 <span className="w-1.5 h-6 bg-accent-primary rounded-full shadow-glow"></span>
                                 {t('section_food')}
                             </h2>
-                            {renderGrid(initialItems.filter(i => isFood(i)))}
+                            {renderGrid(foodItems)}
                         </section>
                     )}
                 </div>
             ) : (
                 // Filtered View
                 <div>
-                    {renderGrid(getFilteredItems())}
+                    {renderGrid(filteredItems)}
 
-                    {getFilteredItems().length === 0 && (
+                    {filteredItems.length === 0 && (
                         <div className="text-center py-20 text-muted-foreground animate-fade-in">
                             No items found in this category.
                         </div>

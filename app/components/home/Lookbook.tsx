@@ -1,34 +1,27 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
-import { getInstagramPosts, InstagramPost } from '@/lib/instagram';
 
 const STATIC_LOOKBOOK_IMAGES = [
-    'https://ebctnryujebfmewlczey.supabase.co/storage/v1/object/public/instagram-assets/posts/2026-01-23_08-58-31_UTC_1.jpg',
-    'https://ebctnryujebfmewlczey.supabase.co/storage/v1/object/public/instagram-assets/posts/2026-01-06_07-19-31_UTC_1.jpg',
-    'https://ebctnryujebfmewlczey.supabase.co/storage/v1/object/public/instagram-assets/posts/2024-11-18_11-30-38_UTC_3.jpg',
-    'https://ebctnryujebfmewlczey.supabase.co/storage/v1/object/public/instagram-assets/posts/2026-01-05_12-00-18_UTC.jpg',
-    'https://ebctnryujebfmewlczey.supabase.co/storage/v1/object/public/instagram-assets/posts/2026-01-03_11-39-31_UTC.jpg',
-    'https://ebctnryujebfmewlczey.supabase.co/storage/v1/object/public/instagram-assets/posts/2025-06-18_04-07-01_UTC_5.jpg',
-    'https://ebctnryujebfmewlczey.supabase.co/storage/v1/object/public/instagram-assets/posts/2026-01-12_07-24-47_UTC.jpg',
-    'https://ebctnryujebfmewlczey.supabase.co/storage/v1/object/public/instagram-assets/posts/2026-01-11_10-00-43_UTC.jpg',
+    '/assets/instagram/2026-01-23_08-58-31_UTC_1.jpg',
+    '/assets/instagram/2026-01-06_07-19-31_UTC_1.jpg',
+    '/assets/instagram/2024-11-18_11-30-38_UTC_3.jpg',
+    '/assets/instagram/2026-01-05_12-00-18_UTC.jpg',
+    '/assets/instagram/2026-01-03_11-39-31_UTC.jpg',
+    '/assets/instagram/2025-06-18_04-07-01_UTC_5.jpg',
+    '/assets/instagram/2026-01-12_07-24-47_UTC.jpg',
+    '/assets/instagram/2026-01-11_10-00-43_UTC.jpg',
 ];
 
-export default function Lookbook() {
-    const t = useTranslations('home');
-    const [images, setImages] = useState<string[]>(STATIC_LOOKBOOK_IMAGES);
+interface LookbookProps {
+    initialImages?: string[];
+}
 
-    useEffect(() => {
-        async function loadImages() {
-            const posts = await getInstagramPosts(8);
-            if (posts && posts.length > 0) {
-                setImages(posts.map(p => p.media_url));
-            }
-        }
-        loadImages();
-    }, []);
+export default function Lookbook({ initialImages = [] }: LookbookProps) {
+    const t = useTranslations('home');
+    const images = initialImages.length > 0 ? initialImages : STATIC_LOOKBOOK_IMAGES;
 
     return (
         <section className="section overflow-hidden">

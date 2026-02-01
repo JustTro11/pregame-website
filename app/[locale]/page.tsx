@@ -1,11 +1,15 @@
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import Hero from '@/app/components/home/Hero';
 import FeaturedDrinks from '@/app/components/home/FeaturedDrinks';
 import QuickReserve from '@/app/components/home/QuickReserve';
 import Lookbook from '@/app/components/home/Lookbook';
+import { getInstagramPosts } from '@/lib/instagram';
 
-export default function HomePage() {
-  const t = useTranslations('home');
+export default async function HomePage() {
+  const t = await getTranslations('home');
+  // const posts = await getInstagramPosts(8).catch(() => []);
+  // const lookbookImages = posts ? posts.map(p => p.media_url) : [];
+  const lookbookImages: string[] = []; // Force fallback to valid local assets
 
   return (
     <div className="flex flex-col w-full">
@@ -14,7 +18,7 @@ export default function HomePage() {
       <QuickReserve />
 
       {/* Authentic Instagram Lookbook */}
-      <Lookbook />
+      <Lookbook initialImages={lookbookImages} />
 
       {/* Location Section */}
       <section className="section bg-bg-secondary">

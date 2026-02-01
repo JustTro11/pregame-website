@@ -12,7 +12,7 @@ import PartySizeSelector from '@/app/components/reservation/PartySizeSelector';
 import Input from '@/app/components/ui/Input';
 import Button from '@/app/components/ui/Button';
 import Card from '@/app/components/ui/Card';
-import { Calendar, Clock, Users, User, Phone, CheckCircle2 } from 'lucide-react';
+import { Calendar, Clock, Users, User, Phone, CheckCircle2, AlertCircle } from 'lucide-react';
 import { createReservation } from '@/app/actions/reservation';
 
 type Inputs = {
@@ -32,6 +32,7 @@ export default function ReservationForm() {
     const [date, setDate] = useState<Date | null>(null);
     const [time, setTime] = useState<string | null>(null);
     const [partySize, setPartySize] = useState<number>(2);
+    const [error, setError] = useState<string | null>(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     // Form handling
@@ -50,6 +51,7 @@ export default function ReservationForm() {
         if (!date || !time) return;
 
         setIsSubmitting(true);
+        setError(null);
 
         // Call Server Action
         const result = await createReservation({
@@ -60,7 +62,7 @@ export default function ReservationForm() {
         });
 
         if (result.error) {
-            alert(result.error); // Simple error handling for now
+            setError(result.error);
             setIsSubmitting(false);
             return;
         }
@@ -72,6 +74,12 @@ export default function ReservationForm() {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-8 animate-fade-in">
+            {error && (
+                <div className="bg-destructive/10 text-destructive border border-destructive/20 p-4 rounded-lg mb-6 flex items-start gap-3">
+                    <AlertCircle className="shrink-0 mt-0.5" size={20} />
+                    <span>{error}</span>
+                </div>
+            )}
 
             {/* Step 1: Date & Party Size */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

@@ -35,23 +35,20 @@ export default function TimeSlotPicker({
     // Handle crossing midnight (e.g. close at 1 AM means 25)
     const effectiveEndHour = endHour < startHour ? endHour + 24 : endHour;
 
+    // Pre-calculate date bounds outside the loop
+    const now = new Date();
+    const isToday = selectedDate.toDateString() === now.toDateString();
+    const minBookingTime = new Date(now.getTime() + businessConfig.reservation.minAdvanceMinutes * 60000);
+
     for (let h = startHour; h < effectiveEndHour; h++) {
         // Determine AM/PM display
         const hour = h % 24;
-        const hour12 = hour % 12 || 12;
-        const period = hour >= 12 ? 'PM' : 'AM';
         const timeString = `${hour.toString().padStart(2, '0')}:00`;
-
-        // Check if slot is in the past (only for today)
-        const now = new Date();
-        const isToday = selectedDate.toDateString() === now.toDateString();
 
         let isPast = false;
         if (isToday) {
             const slotTime = new Date(selectedDate);
             slotTime.setHours(hour, 0, 0, 0);
-            // Add minimum advance booking time (e.g. 1 hour)
-            const minBookingTime = new Date(now.getTime() + businessConfig.reservation.minAdvanceMinutes * 60000);
             isPast = slotTime < minBookingTime;
         }
 

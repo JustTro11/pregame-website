@@ -16,12 +16,19 @@ describe('Instagram Lib', () => {
 
     beforeEach(() => {
         jest.clearAllMocks();
+
+        // Setup chain: select -> order -> order -> limit
+        // We need the order mock to return an object that also has order (for chaining) and limit
+        const queryBuilder = {
+            order: mockOrder,
+            limit: mockLimit
+        };
+
+        // When order is called, it returns the same builder to allow chaining
+        mockOrder.mockReturnValue(queryBuilder);
+
         mockFrom.mockReturnValue({
-            select: mockSelect.mockReturnValue({
-                order: mockOrder.mockReturnValue({
-                    limit: mockLimit
-                })
-            })
+            select: mockSelect.mockReturnValue(queryBuilder)
         });
     });
 
