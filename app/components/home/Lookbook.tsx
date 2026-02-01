@@ -5,14 +5,14 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
 const STATIC_LOOKBOOK_IMAGES = [
-    '/assets/instagram/2026-01-23_08-58-31_UTC_1.jpg',
-    '/assets/instagram/2026-01-06_07-19-31_UTC_1.jpg',
-    '/assets/instagram/2024-11-18_11-30-38_UTC_3.jpg',
-    '/assets/instagram/2026-01-05_12-00-18_UTC.jpg',
-    '/assets/instagram/2026-01-03_11-39-31_UTC.jpg',
-    '/assets/instagram/2025-06-18_04-07-01_UTC_5.jpg',
-    '/assets/instagram/2026-01-12_07-24-47_UTC.jpg',
-    '/assets/instagram/2026-01-11_10-00-43_UTC.jpg',
+    'https://ebctnryujebfmewlczey.supabase.co/storage/v1/object/public/static-assets/lookbook-1.jpg',
+    'https://ebctnryujebfmewlczey.supabase.co/storage/v1/object/public/static-assets/lookbook-2.jpg',
+    'https://ebctnryujebfmewlczey.supabase.co/storage/v1/object/public/static-assets/lookbook-3.jpg',
+    'https://ebctnryujebfmewlczey.supabase.co/storage/v1/object/public/static-assets/lookbook-4.jpg',
+    'https://ebctnryujebfmewlczey.supabase.co/storage/v1/object/public/static-assets/lookbook-5.jpg',
+    'https://ebctnryujebfmewlczey.supabase.co/storage/v1/object/public/static-assets/lookbook-6.jpg',
+    'https://ebctnryujebfmewlczey.supabase.co/storage/v1/object/public/static-assets/lookbook-7.jpg',
+    'https://ebctnryujebfmewlczey.supabase.co/storage/v1/object/public/static-assets/lookbook-8.jpg',
 ];
 
 interface LookbookProps {

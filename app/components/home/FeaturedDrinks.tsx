@@ -10,10 +10,10 @@ import Button from '@/app/components/ui/Button';
 const drinks = [
     {
         id: 1,
-        name: 'Irish Coffee',
+        name: 'Dalgona Coffee',
         price: '180',
         pairing: 'Vintage Denim & Eames Seating',
-        image: '/drink-1.jpg',
+        image: 'https://ebctnryujebfmewlczey.supabase.co/storage/v1/object/public/static-assets/drink-1.jpg?v=2',
         bg: 'bg-red-900/10',
     },
     {
@@ -21,15 +21,15 @@ const drinks = [
         name: 'Signature Soda Float',
         price: '160',
         pairing: 'Fresh Kicks & City Lights',
-        image: '/drink-2.jpg',
+        image: 'https://ebctnryujebfmewlczey.supabase.co/storage/v1/object/public/static-assets/drink-2.jpg?v=2',
         bg: 'bg-cream/5',
     },
     {
         id: 3,
-        name: 'Craft Mocktail',
+        name: 'Irish Coffee',
         price: '200',
         pairing: 'Late Night Beats & Oversized Tees',
-        image: '/drink-3.jpg',
+        image: 'https://ebctnryujebfmewlczey.supabase.co/storage/v1/object/public/static-assets/drink-3.jpg?v=2',
         bg: 'bg-black/20',
     },
 ];

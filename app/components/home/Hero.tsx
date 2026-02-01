@@ -13,7 +13,7 @@ export default function Hero() {
             {/* Background with overlay */}
             <div className="absolute inset-0">
                 <Image
-                    src="/assets/instagram/2026-01-05_12-00-18_UTC.jpg"
+                    src="https://ebctnryujebfmewlczey.supabase.co/storage/v1/object/public/static-assets/hero.jpg"
                     alt="Hero Background"
                     fill
                     priority

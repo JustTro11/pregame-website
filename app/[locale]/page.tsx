@@ -7,9 +7,9 @@ import { getInstagramPosts } from '@/lib/instagram';
 
 export default async function HomePage() {
   const t = await getTranslations('home');
-  // const posts = await getInstagramPosts(8).catch(() => []);
-  // const lookbookImages = posts ? posts.map(p => p.media_url) : [];
-  const lookbookImages: string[] = []; // Force fallback to valid local assets
+  const posts = await getInstagramPosts(8).catch(() => []);
+  const lookbookImages = posts ? posts.map(p => p.media_url) : [];
+  // const lookbookImages: string[] = []; // Force fallback to valid local assets
 
   return (
     <div className="flex flex-col w-full">
