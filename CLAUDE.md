@@ -11,7 +11,7 @@
 - **Backend**: Supabase (PostgreSQL, Storage, Edge Functions)
 - **i18n**: next-intl with 5 locales: `zh-TW` (default), `en`, `zh-CN`, `ja`, `ko`
 - **Forms**: react-hook-form
-- **Testing**: Jest (unit) + Playwright (e2e)
+- **Testing**: Jest (unit) + Playwright (e2e) + Deno test (edge functions)
 - **Package manager**: npm
 
 ## Project Structure
@@ -35,7 +35,12 @@ app/
 └── i18n/               # routing.ts, request.ts
 lib/                    # Supabase client, Instagram fetch, utils
 messages/               # i18n JSON files per locale
-supabase/               # Edge Functions (line-webhook, send-reminders)
+supabase/
+├── functions/
+│   ├── _shared/        # Shared utilities (line-api.ts) — import from here, don't duplicate
+│   ├── line-webhook/   # LINE chatbot (booking state machine, FAQ, lookup)
+│   │   └── test/       # Deno unit tests — run with: /tmp/deno test --config deno.json test/unit.test.ts
+│   └── send-reminders/ # Daily reminder cron function
 __tests__/              # Jest unit tests (mirrors app structure)
 e2e/                    # Playwright tests (home, menu, reservation)
 scripts/                # sync_instagram.py, seed_supabase.py, etc.
@@ -56,7 +61,7 @@ scripts/                # sync_instagram.py, seed_supabase.py, etc.
 ### Database (Supabase)
 - Use Server Actions (`app/actions/`) for all DB mutations
 - Use the anon client (`lib/supabase/client.ts`) for browser reads, service role client for server-side/edge functions
-- Key tables: `menu_categories`, `menu_items`, `reservations`, `instagram_posts`, `line_conversations`
+- Key tables: `menu_categories`, `menu_items`, `reservations`, `instagram_posts`, `line_conversations`, `customer_profiles`
 
 ### Styling
 - Tailwind CSS v4 — use utility classes; no separate config file, configuration is in CSS
@@ -80,6 +85,10 @@ npm run test:e2e:ui  # Playwright with interactive UI
 - **Every new feature or bug fix requires tests.** Unit tests go in `__tests__/` mirroring the source path.
 - Jest uses jsdom environment; mock Supabase calls in unit tests.
 - E2E tests are in `e2e/` and run against the dev server.
+- **Edge function tests** use Deno's test runner. Run from `supabase/functions/line-webhook/`:
+  ```bash
+  /tmp/deno test --config deno.json test/unit.test.ts
+  ```
 - Run `npm test` before marking any implementation complete.
 
 ## Environment Variables
@@ -95,13 +104,13 @@ SUPABASE_SERVICE_ROLE_KEY=
 
 ## External Integrations
 
-- **LINE Bot**: Supabase Edge Function at `supabase/functions/line-webhook/` handles booking state machine and FAQ
+- **LINE Bot**: Supabase Edge Functions at `supabase/functions/line-webhook/` (booking, FAQ, reservation lookup) and `send-reminders/` (daily cron). Shared LINE API utilities live in `supabase/functions/_shared/line-api.ts` — add new shared helpers there, never duplicate across functions
 - **Instagram**: GitHub Actions runs `scripts/sync_instagram.py` daily to sync posts into `instagram_posts` table
 - **Supabase Storage**: Static assets (images) are served from Supabase Storage, not `/public`
 
 ## Business Rules (reference)
 
-- Operating hours: Mon–Tue, Thu–Fri 3 PM–11 PM; Sat 3 PM–1 AM; closed Wednesday and Sunday (verify in `app/config/business.ts`)
+- Operating hours: Sun–Tue, Thu 3–11 PM; Fri–Sat 3 PM–1 AM; closed Wednesday only (verify in `app/config/business.ts`)
 - Reservations: 1–8 guests, up to 7 days in advance
 - Seating capacity: 26 total
 
